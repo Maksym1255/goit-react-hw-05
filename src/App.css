@@ -4,7 +4,7 @@
   padding: 2rem;
   text-align: center;
 }
-
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +39,23 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+h2 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: inherit;
 }
