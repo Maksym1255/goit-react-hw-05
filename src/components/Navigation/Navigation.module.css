@@ -15,7 +15,7 @@
   text-decoration: none;
   border: 1px solid rgb(184, 184, 255);
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px 20px;
   background-color: rgb(184, 184, 255);
   color: blue;
   transition: color 0.3s ease;
@@ -25,12 +25,12 @@
   text-decoration: none;
   border: 1px solid rgb(184, 184, 255);
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px 20px;
   color: white;
   background-color: blue;
   border: 1px solid blue;
 
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .link:hover,
