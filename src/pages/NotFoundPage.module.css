@@ -1,0 +1,26 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.notFoundImg {
+  max-width: 100%;
+}
+
+.btnLink {
+  display: inline-flex;
+  justify-content: center;
+  max-width: 100%;
+  border: 1px solid rgb(184, 184, 255);
+  border-radius: 8px;
+  padding: 5px 10px;
+  background-color: rgb(184, 184, 255);
+  transition: color 0.3s ease;
+  margin-bottom: 20px;
+}
+.btnLink:hover {
+  color: white;
+  background-color: rgb(200, 200, 255);
+}

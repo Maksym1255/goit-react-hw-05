@@ -1,9 +1,41 @@
+.textContainer {
+  margin-bottom: 20px;
+}
+
 .navDetails {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.posterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.releasContainer {
+  padding-left: 10px;
+}
+
+.releas {
+  text-align: start;
+  padding-bottom: 10px;
+}
+
+.overview {
+  text-align: justify;
+  padding-bottom: 10px;
+}
+
+.genres {
+  text-align: start;
 }
 
 .link {

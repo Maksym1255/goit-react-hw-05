@@ -4,6 +4,9 @@ import Loader from "../components/Loader/Loader";
 import { detailseMovie } from "../components/service/service";
 import styles from "./MovieDetailsPage.module.css";
 
+const defaultImg =
+  "https://images.hdqwalls.com/wallpapers/water-through-rocks-4k-kl.jpg";
+
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
@@ -13,10 +16,10 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   const goBack = useRef(location?.state?.from ?? "/");
   useEffect(() => {
-    setLoading(true);
     setError(null);
 
     const fetchDataDetalis = async () => {
+      setLoading(true);
       try {
         const response = await detailseMovie(movieId);
 
@@ -41,20 +44,34 @@ const MovieDetailsPage = () => {
       </Link>
       {movie && (
         <div>
-          <h2>{movie.title}</h2>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-            alt={title}
-            width={250}
-          />
-          <p>Releas date: {release_date}</p>
-          <p>{overview}</p>
-          <p>
-            Genres:{" "}
-            {genres && genres.length > 0
-              ? genres.map((genre) => genre.name).join(", ")
-              : "No detalis"}
-          </p>
+          <div className={styles.textContainer}>
+            <h2 className={styles.title}>{movie.title}</h2>
+            <div className={styles.posterContainer}>
+              <img
+                className={styles.poster}
+                src={
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                    : defaultImg
+                }
+                alt={title}
+                width={250}
+              />
+              <div className={styles.releasContainer}>
+                <p className={styles.releas}>
+                  <b>Releas date: {release_date}</b>
+                </p>
+                <p className={styles.overview}>{overview}</p>
+                <p className={styles.genres}>
+                  Genres:{" "}
+                  {genres && genres.length > 0
+                    ? genres.map((genre) => genre.name).join(", ")
+                    : "No detalis"}
+                </p>
+              </div>
+            </div>
+          </div>
+
           <nav className={styles.navDetails}>
             <Link to={"cast"} className={styles.link}>
               Cast

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { movieReviews } from "../service/service";
 import Loader from "../Loader/Loader";
+import styles from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -26,7 +27,7 @@ const MovieReviews = () => {
     };
     fetchMovieReviews();
   }, [movieId]);
-  console.log(reviews);
+
   return (
     <section>
       {loading && <Loader />}
@@ -34,9 +35,9 @@ const MovieReviews = () => {
       {reviews.length > 0 ? (
         <ul>
           {reviews.map((review) => (
-            <li key={review.id}>
-              <h5>{review.author}</h5>
-              <p>{review.content}</p>
+            <li key={review.id} className={styles.reviewItem}>
+              <h5 className={styles.reviewAutor}>{review.author}</h5>
+              <p className={styles.reviewContent}>{review.content}</p>
             </li>
           ))}
         </ul>

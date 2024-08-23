@@ -51,3 +51,23 @@ export const movieReviews = async (id) => {
   });
   return data;
 };
+
+export const movieSearch = async (query) => {
+  try {
+    const { data } = await axios.get(
+      `/search/movie?query=${encodeURIComponent(query)}&page=1`,
+      {
+        headers: {
+          Authorization: `Bearer ${API_TOKEN}`,
+        },
+        params: {
+          language: "en-US",
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    console.error("Error during movie search:", error.message);
+    throw error;
+  }
+};

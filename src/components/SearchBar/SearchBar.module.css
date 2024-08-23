@@ -1,0 +1,30 @@
+.input {
+  border: 1px solid rgb(184, 184, 255);
+  border-radius: 4px;
+  background-color: transparent;
+
+  padding: 7px;
+  padding-right: 40px;
+  outline: none;
+  margin-bottom: 20px;
+  margin-right: 8px;
+}
+
+.input:hover,
+.input:focus {
+  border-color: blue;
+}
+
+.btn {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgb(184, 184, 255);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: blue;
+  color: aliceblue;
+}

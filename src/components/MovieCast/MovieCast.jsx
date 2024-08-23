@@ -33,25 +33,29 @@ const MovieCast = () => {
     <section>
       {loading && <Loader />}
       {error && <p>Error: {error}</p>}
-      <ul className={styles.castList}>
-        {cast.map((actor) => (
-          <li key={actor.id} className={styles.castItem}>
-            <img
-              src={
-                actor.profile_path
-                  ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
-                  : imgNotFound
-              }
-              alt={actor.name}
-              width={150}
-            />
-            <div className={styles.castText}>
-              <h4 className={styles.castName}>{actor.name}</h4>
-              <p>Character: {actor.character}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {cast.length > 0 ? (
+        <ul className={styles.castList}>
+          {cast.map((actor) => (
+            <li key={actor.id} className={styles.castItem}>
+              <img
+                src={
+                  actor.profile_path
+                    ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+                    : imgNotFound
+                }
+                alt={actor.name}
+                width={150}
+              />
+              <div className={styles.castText}>
+                <h4 className={styles.castName}>{actor.name}</h4>
+                <p>Character: {actor.character}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No information</p>
+      )}
     </section>
   );
 };

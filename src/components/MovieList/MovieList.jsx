@@ -1,6 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./MovieList.module.css";
 
+const defaultImg =
+  "https://images.hdqwalls.com/wallpapers/water-through-rocks-4k-kl.jpg";
+
 const MovieList = ({ movieList }) => {
   const location = useLocation();
 
@@ -13,8 +16,9 @@ const MovieList = ({ movieList }) => {
               <div>
                 <img
                   src={
-                    movie.poster_path &&
-                    `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                    movie.poster_path
+                      ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                      : defaultImg
                   }
                   alt={movie.title}
                   width={350}
